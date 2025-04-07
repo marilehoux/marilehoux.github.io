@@ -15,7 +15,15 @@
 		<!-- Font Awesome -->
 		<script src="https://kit.fontawesome.com/5b8c91df18.js" crossorigin="anonymous"></script>
 	</head>
-
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+		  const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+		  const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+			return new bootstrap.Popover(popoverTriggerEl);
+		  });
+		});
+	  </script>
+	  
 
 	<body>
 		<header>
@@ -28,314 +36,75 @@
 						</button>
 						<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 							<ul class="navbar-nav">
-								<!-- <li class="nav-item active">
-									<a class="nav-link" href="#mariLehoux">Qui suis-je ?</a>
-								</li> -->
-								<!-- demouv n'est pas en ligne pour le moment
-								<li class="nav-item">
-								<a class="nav-link" href="#expertise">Expertises</a>
-								</li>
-								-->
-								<!-- <li class="nav-item">
-									<a class="nav-link" href="#portfolio">Mes projets de formation</a>
-								</li> -->
-								<!-- <li class="nav-item">
-									<a class="nav-link" href="#portfolio">Mes certificats</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#outils">Mes outils</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#sites">Mes sites</a>
-								</li> -->
-								<!-- demouv n'est pas en ligne pour le moment
-								<li class="nav-item">
-								<a class="nav-link" href="#contact">Contact</a>
-								</li>
-								-->
-								<!-- demouv n'est pas en ligne pour le moment
+								
 								<li class="nav-item">
 								<a class="nav-link" href="./html/demouv.html">Demouv'</a>
 								</li>
-								-->
-								<!-- Il faudra créer sur le modèle de DEMOUV: Libravelo.fr, libravelo.bzh, bicycletterie-->
+								<li class="nav-item">
+									<a class="nav-link" href="./html/carbone.html">Carbone'</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="./html/test.html">test</a>
+								</li>
+								
 							</ul>
 						</div>
 					</div>   
 				</nav> 
 			</div>   
 		</header>
-
+		
 		<main>
-			<section>
-				essai rendez vous DCTB
-				<!-- Google Calendar Appointment Scheduling begin -->
-				<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-				<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-				<script>
-				(function() {
-				var target = document.currentScript;
-				window.addEventListener('load', function() {
-					calendar.schedulingButton.load({
-					url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ204P_WmZypR_mZTutQcn1BGdrhLmtj-V4BCruNbhsHW_fhRabLnnkEP9xVvFhaiFxzHjFHPCLG?gv=true',
-					color: '#039BE5',
-					label: 'Réserver un rendez-vous',
-					target,
-					});
-				});
-				})();
-				</script>
-				<!-- end Google Calendar Appointment Scheduling -->
-			</section>
 			<!-- Ma présentation-->
 			<section class="py-5" id="mariLehoux">
 				<div class="container py-5">
 					<div class="row align-items-center">
 						<div class="col-8 col-md-10">
-							<h1 class ="fw-bold ">Je suis Développeur Frontend</h1>
+							<h1 class ="fw-bold ">Développeur Web | Concepteur d'applications Expérience Transversale & Adaptabilité</h1>
+							
 							<h2 class="fw-light">
 								<p>
-									J'ai suivi la formation de Développeur Web d'OpenClassrooms dans le cadre d'un contrat d'alternance 
-									chez CairnManagement. 
-								</p>
-								<p>
-									J'ai obtenu le diplôme en octobre 2022.
-								</p>
-								<p>
-									Auparavant j'ai été restaurateur, topographe, spécialiste des migrations internationales ou vélociste.
+									Fort d’un parcours atypique alliant management, urbanisme et entrepreneuriat, j’ai opéré une reconversion réussie dans le développement web. 
+									Je mets aujourd’hui mon agilité et ma capacité d’apprentissage rapide au service de projets innovants, combinant expertise technique et approche pragmatique.
 								</p>
 								
-								<hr>Bienvenue dans mon nouvel univers
-								<br><hr>
-								<ul class="list-inline">
-									<li class="list-inline-item"><a href="https://www.linkedin.com/in/mari-lehoux/" class="text-primary"><i class="bi bi-linkedin"></i></a></li>
-									<li class="list-inline-item"> <a href="https://github.com/marilehoux" class="text-dark"> <i class="bi bi-github"></i></a></li>
-								</ul>
 							</h2>
-							<!--<div class="row">-->
-							<!-- soyons modeste mon expertise est à venir <button class="btn btn-primary mt-4 col">Mon expertise</button> -->                    
-							<!--</div>-->
+							
 						</div>
 						<div class="col">
 							<div class="align-items-start">
-								<img class="rounded-circle" src="./img/avatarToon.png" width="100%" alt="portrait toon de Mari Lehoux">
-
+								<img src="./img/avatarPasToon.jpeg" class="img-fluid" alt="Portrait de Mari Lehoux">
 							</div>
-							
 						</div>
 					</div>
-				</div>
+					<div class="container">
+						
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="https://www.linkedin.com/in/mari-lehoux/" class="text-primary"><i class="bi bi-linkedin"></i></a></li>
+								<li class="list-inline-item"> <a href="https://github.com/marilehoux" class="text-dark"> <i class="bi bi-github"></i></a></li>
+								<li class="list-inline-item">
+									<a href="https://..." class="btn btn-outline-primary" target="_blank">📄 Voir mon CV interactif</a>
+								</li>
+								
+								<li class=""list-inline-item">
+									<a id="rendezvous-btn"
+										 href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ204P_WmZypR_mZTutQcn1BGdrhLmtj-V4BCruNbhsHW_fhRabLnnkEP9xVvFhaiFxzHjFHPCLG?gv=true" 
+   										class="btn btn-primary btn-lg shadow-sm px-4 py-2 d-inline-flex align-items-center gap-2"
+   										target="_blank">
+   										<i class="bi bi-calendar-event-fill"></i> Réserver un rendez-vous
+									</a>
+								</li>
+							</ul>
+							
+						
 			</section>
 
-			<section class="py-4 bg-light" id="saut">
-				<div class="container">
-				
-				</div>
-			</section>
 			
 			
-			<section class="py-5" id="portfolio">
-				<div class="container">
-					<h2 class="mb-2">Projets professionnalisants réalisés dans le cadre de la formation<span class="fw-bold ms-1">développeur web</span> d'Openclassrooms</h2>
-					<p class="fs-4 fw-light mb-4"></p>
-						<div class="card-group row row-cols-1 row-cols-md-3  g-4">
-							<div class="col">
-								<div class="card h-100 border">
-									<div class="card-header">Reservia</div>
-									<a href="https://marilehoux.github.io/lehouxmari_2_11072021/">
-										<img src="./img/Reservia.jpg" class="card-img-top" alt="image projet Reservia">
-									</a>
-									<div class="card-body">
-										<h4 class="card-title">Reproduire une maquette en HTML5 et CSS3</h4>
-										<p class="card-text">...</p>
-										<p class="card-text">Temps de réalisation: 90h</p>
-									</div>
-									<div class="card-footer bg-white">
-										<a href="https://github.com/marilehoux/lehouxmari_2_11072021" class="btn btn-primary float-end"><i class="fa-solid fa-arrow-right-long"></i><i class="bi bi-github ms-2"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="card h-100 border">
-									<div class="card-header">Ohmyfood</div>
-									<a href="https://marilehoux.github.io/lehouxmari_3_08112021/">
-										<img src="./img/ohmyfood.jpg" class="card-img-top" alt="image projet Ohmyfood">
-									</a>
-									<div class="card-body">
-										<h4 class="card-title">Reproduire une maquette et réaliser différentes animations CSS</h4>
-										<p class="card-text">...</p>
-										<p class="card-text">Temps de réalisation: 70h</p>
-									</div>
-									<div class="card-footer bg-white">
-										<a href="https://github.com/marilehoux/lehouxmari_3_08112021" class="btn btn-primary float-end"><i class="fa-solid fa-arrow-right-long"></i><i class="bi bi-github ms-2"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="card h-100 border">
-									<div class="card-header">La chouette agence</div>
-									
-									<a href="https://marilehoux.github.io/lehouxmari_4_31012022/" class="col">
-										<img src="./img/laChouetteAgence.jpg" class="card-img-top" alt="image projet La chouette agence">
-									</a>
-									<div class="card-body">
-										<h4 class="card-title">Optimiser un site web existant</h4>
-										<p class="card-text">...</p>
-										<p class="card-text">Temps de réalisation: 30h</p>
-									</div>
-									<div class="card-footer bg-white">
-										<a href="https://github.com/marilehoux/lehouxmari_4_31012022" class="btn btn-primary float-end"><i class="fa-solid fa-arrow-right-long"></i><i class="bi bi-github ms-2"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="card h-100 border">
-									<div class="card-header">Kanap</div>
-									
-									<img src="./img/logoKanap.png" class="card-img-top" alt="image projet Kanap">
-									<div class="card-body">
-										<h4 class="card-title">Construire un site e-commerce en JavaScript</h4>
-										<p class="card-text">...</p>
-										<p class="card-text">Temps de réalisation: 90h</p>
-									</div>
-									<div class="card-footer bg-white">
-										<a href="https://github.com/marilehoux/lehouxmari_5_01032022" class="btn btn-primary float-end"><i class="fa-solid fa-arrow-right-long"></i><i class="bi bi-github ms-2"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="card h-100 border">
-									<div class="card-header">Piiquante</div>
-									
-									<img src="./img/image sauce piiquante.png" class="card-img-top" alt="image projet Piiquante">
-									<div class="card-body">
-										<h4 class="card-title">Construire une API sécurisée pour une application d'avis gastronomiques</h4>
-										<p class="card-text">...</p>
-										<p class="card-text">Temps de réalisation: 50h</p>
-									</div>
-									<div class="card-footer bg-white">
-										<a href="https://github.com/marilehoux/lehouxmari_6_01062022" class="btn btn-primary float-end"><i class="fa-solid fa-arrow-right-long"></i><i class="bi bi-github ms-2"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="card h-100 border">
-									<div class="card-header">Groupomania</div>
-									
-									<img src="./img/logoGroupo.png" class="card-img-top" alt="image projet Groupomania">
-									<div class="card-body">
-										<h4 class="card-title">Créer un réseau social d'entreprise</h4>
-										<p class="card-text">...</p>
-										<p class="card-text">Temps de réalisation: 50h</p>
-									</div>
-									<div class="card-footer bg-white">
-										<a href="https://github.com/marilehoux/lehouxmari_7_04062022" class="btn btn-primary float-end"><i class="fa-solid fa-arrow-right-long"></i><i class="bi bi-github ms-2"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
+			
+			
 
-						<section class="py-4 bg-light" id="saut1">
-							<div class="container">
-							
-							</div>
-						</section>
 					
-						<section class="py-5" id="trousse">
-							<div class="container">
-								<h2 class="mb-2">Mes outils</h2>
-								<div class="d-flex display-6  justify-content-around">
-
-										<i class="fa-brands fa-html5"></i>
-										<i class="fa-brands fa-css3-alt"></i>
-										<i class="fa-brands fa-bootstrap"></i>
-										<i class="fa-brands fa-js"></i>
-										<i class="fa-brands fa-vuejs"></i>
-										<i class="fa-brands fa-php"></i>
-										<i class="fa-brands fa-wordpress"></i>
-										<i class="fa-brands fa-node"></i>
-									
-								</div>
-							</div>
-			
-						</section>
-
-						<section class="py-4 bg-light" id="saut2">
-							<div class="container">
-							
-							</div>
-						</section>
-						<!-- <section class="py-5" id="projets">
-							<div class="container">
-							<h2>Mes nouveaux projets</h2>
-							<div class="row g-2">
-								<div class="col-12  col-lg-4 mb-2">
-									<div class="card">
-										<img src="https:/picsum.photos/300/150?random=8" class="card-img-top" alt="image projet Demouv">
-										<h4 class="card-title m-1">Demouv' </h4>
-										<div class="card-body">
-											<p class="card-text m-1">L'agence Web au service de la mobilité à vélo</p>
-											<button class="btn btn-primary col m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasDemouv" aria-controls="offcanvasBottom">Plus d'infos</button>
-											<div class="offcanvas offcanvas-bottom h-100" tabindex="-1" id="offCanvasDemouv" aria-labelledby="offcanvasDemouvLabel">
-												<div class="offcanvas-header">
-													<h5 class="offcanvas-title" id="offCanvasDemouv">L'agence DEMOUV'</h5>
-													<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-												</div>
-												<div class="offcanvas-body small">
-													...L'agence Demouv est une agence Web spécialisée dans la promotion du déplacement à bicyclette
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-12  col-lg-4 mb-2">
-									<div class="card">
-										<img src="https:/picsum.photos/300/150?random=9" class="card-img-top" alt="image projet Demouv">
-										<h4 class="card-title m-1">La bicycletterie</h4>
-										<div class="card-body">
-											<p class="card-text m-1">Toutes les bicyclettes ont une histoire, elle commence souvent dans une bicycletterie</p>
-											<button class="btn btn-primary col m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasDemouv" aria-controls="offcanvasBottom">Plus d'infos</button>
-											<div class="offcanvas offcanvas-bottom h-100" tabindex="-1" id="offCanvasDemouv" aria-labelledby="offcanvasDemouvLabel">
-												<div class="offcanvas-header">
-													<h5 class="offcanvas-title" id="offCanvasDemouv">La bicycletterie servannaise..</h5>
-													<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-												</div>
-												<div class="offcanvas-body small">
-													...La bicycletterie servannaise....
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-12  col-lg-4 mb-2">
-									<div class="card">
-										<img src="https:/picsum.photos/300/150?random=7" class="card-img-top" alt="image projet Libravelo">
-										<h4 class="card-title m-1">Libravelo </h4>
-										<div class="card-body">
-											<p class="card-text m-1">Les roues de vélo sont des coussins d'air qui arpentent le globe terrestre en tous sens lui donnant son équilibre et son harmonie</p>
-											<button class="btn btn-primary col m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasLibravelo" aria-controls="offcanvasBottom">Plus d'infos</button>
-											<div class="offcanvas offcanvas-bottom h-100" tabindex="-1" id="offCanvasLibravelo" aria-labelledby="offcanvasDemouvLabel">
-												<div class="offcanvas-header">
-													<h5 class="offcanvas-title" id="offCanvasLibravelo">Libravelo</h5>
-													<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-												</div>
-												<div class="offcanvas-body small">
-													...L'association Libravelo
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						</section> -->
-						
-						
-						
-					
-				</div>
-			</div>
 			
 			<section class="py-5 bg-light" id="contact">
 				<div class="container">
